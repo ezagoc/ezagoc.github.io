@@ -9,11 +9,14 @@ redirect_from:
 ---
 
 
-I am a PhD student in Politics at NYU and hold an MSc in Economics from the [São Paulo School of Economics](https://economics-sp.fgv.br). I am interested in topics in comparative politics and political economy, particularly those related to electoral behavior and electoral geography, with a regional focus on Brazil.
+I am a second-year PhD student in Politics at New York University. Previously, I worked as a pre-doctoral research fellow at CAIE ITAM and Georgetown University through the UPPER Global Research Training Initiative. I am a graduate from the bachelor and the master degree in Economics at ITAM.
+
+My main interests are topics related to political economy, traditional and social media. My research primarily centers on the relationship between social media and several different aspects of society, such as the dynamics of the spread of misinformation, violence and protesting.
 
 
 Education
 ======
-* M.S. in Economics, São Paulo School of Economics - FGV, 2023
-* B.S. in Economics, São Paulo School of Economics - FGV, 2020
+* Ph.D. in Politics, New York University (in progress)
+* M.A. in Economics, ITAM
+* B.A. in Economics, ITAM
 
