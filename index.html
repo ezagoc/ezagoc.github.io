@@ -348,6 +348,31 @@ layout: none
     }
     footer span { color: rgba(255,255,255,.55); }
 
+    /* ── Language toggle ── */
+    .lang-toggle {
+      display: inline-flex; align-items: center;
+      gap: 0; margin-bottom: 20px;
+      border: 1.5px solid var(--violet-tint2);
+      border-radius: var(--r-pill); overflow: hidden;
+      background: var(--bg-2);
+    }
+    .lang-btn {
+      padding: 5px 16px;
+      font-size: .75rem; font-weight: 600;
+      letter-spacing: .05em; text-transform: uppercase;
+      border: none; background: transparent;
+      color: var(--text-3); cursor: pointer;
+      transition: all .18s; line-height: 1.6;
+    }
+    .lang-btn.active {
+      background: var(--violet); color: #fff;
+    }
+    .lang-btn:not(.active):hover {
+      background: var(--violet-tint); color: var(--violet);
+    }
+    .bio-block { display: none; }
+    .bio-block.visible { display: block; }
+
     /* ── Author links inside paper cards ── */
     .author-link {
       color: var(--violet); text-decoration: none;
@@ -465,18 +490,42 @@ layout: none
     <div>
       <h1 class="hero-name">Eduardo Zago Cuevas</h1>
       <p class="hero-title">PhD Student in Politics · New York University</p>
-      <p class="hero-bio">
-        I am a second-year PhD student in the Department of Politics at New York University.
-        Previously, I worked as a pre-doctoral research fellow at CAIE ITAM and Georgetown
-        University through the UPPER Global Research Training Initiative. I hold a BA and MA
-        in Economics from ITAM.
-      </p>
-      <p class="hero-bio" style="margin-top:-12px">
-        My research focuses on political economy, media, and the criminal justice system.
-        I study how governments control information environments, the spread of misinformation,
-        and the political consequences of social media. I am also interested in judicial behavior
-        and criminal justice, with a particular focus on Mexico.
-      </p>
+
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" id="btn-es" onclick="setLang('es')">ES</button>
+      </div>
+
+      <div class="bio-block visible" id="bio-en">
+        <p class="hero-bio">
+          I am a second-year PhD student in the Department of Politics at New York University.
+          Previously, I worked as a pre-doctoral research fellow at CAIE ITAM and Georgetown
+          University through the UPPER Global Research Training Initiative. I hold a BA and MA
+          in Economics from ITAM.
+        </p>
+        <p class="hero-bio" style="margin-top:-12px">
+          My research focuses on political economy, media, and the criminal justice system.
+          I study how governments control information environments, the spread of misinformation,
+          and the political consequences of social media. I am also interested in judicial behavior
+          and criminal justice, with a particular focus on Mexico.
+        </p>
+      </div>
+
+      <div class="bio-block" id="bio-es">
+        <p class="hero-bio">
+          Soy estudiante de segundo año del Doctorado en Política en la Universidad de Nueva York.
+          Anteriormente, trabajé como asistente de investigación predoctoral en el CAIE del ITAM
+          y en la Universidad de Georgetown a través de la Iniciativa UPPER de Formación en
+          Investigación Global. Cuento con una licenciatura y una maestría en Economía por el ITAM.
+        </p>
+        <p class="hero-bio" style="margin-top:-12px">
+          Mi investigación se centra en economía política, medios de comunicación y el sistema
+          de justicia penal. Estudio cómo los gobiernos controlan los entornos de información,
+          la difusión de desinformación y las consecuencias políticas de las redes sociales.
+          También me interesa el comportamiento judicial y la justicia penal, con especial
+          enfoque en México.
+        </p>
+      </div>
       <div class="tags">
         <span class="tag">Political Economy</span>
         <span class="tag">Media &amp; Information</span>
@@ -652,6 +701,18 @@ layout: none
           <p class="cc-value">Download PDF</p>
         </div>
       </a>
+
+      <div class="contact-card reveal" style="cursor:default">
+        <div class="cc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+          </svg>
+        </div>
+        <div>
+          <p class="cc-label">Office</p>
+          <p class="cc-value" style="font-size:.82rem;line-height:1.45">19 W 4th St, 4th Floor, Office 417<br>New York, NY 10012</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -663,6 +724,14 @@ layout: none
 </footer>
 
 <script>
+  // ── Language toggle ──
+  function setLang(lang) {
+    document.getElementById('bio-en').classList.toggle('visible', lang === 'en');
+    document.getElementById('bio-es').classList.toggle('visible', lang === 'es');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+  }
+
   // ── Scroll progress bar ──
   window.addEventListener('scroll', () => {
     const h = document.documentElement;
